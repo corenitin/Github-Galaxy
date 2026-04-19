@@ -1,0 +1,164 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #010818;
+}
+
+.landing-canvas { position: fixed; inset: 0; z-index: 0; }
+
+.landing-nav {
+  position: relative; z-index: 10;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--glow-primary);
+  text-shadow: 0 0 24px rgba(0,212,255,0.5);
+}
+
+.landing-hero {
+  position: relative; z-index: 10;
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.28em;
+  color: rgba(0,180,255,0.45);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 9vw, 108px);
+  font-weight: 700;
+  line-height: 0.95;
+  color: #fff;
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.hero-accent {
+  color: var(--glow-primary);
+  text-shadow: 0 0 40px rgba(0,212,255,0.4);
+  display: block;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 13px; line-height: 2;
+  color: rgba(140,180,220,0.55);
+  max-width: 500px; margin-bottom: 44px;
+}
+
+.btn-launch {
+  display: inline-flex; align-items: center;
+  gap: 10px; margin-bottom: 50px;
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 36px;
+  background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.35);
+  color: var(--glow-primary);
+  border-radius: 7px; cursor: pointer;
+  transition: all 0.25s;
+}
+.btn-launch:hover {
+  background: rgba(0,212,255,0.14);
+  border-color: var(--glow-primary);
+  box-shadow: 0 0 40px rgba(0,212,255,0.2), inset 0 0 30px rgba(0,212,255,0.04);
+  transform: translateY(-2px);
+}
+.btn-launch-icon { display: flex; align-items: center; }
+
+.hero-features {
+  display: flex; gap: 10px;
+  flex-wrap: wrap; justify-content: center;
+}
+
+.feature-pill {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 14px;
+  background: rgba(0,20,60,0.6);
+  border: 1px solid rgba(0,180,255,0.1);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px; color: rgba(140,180,220,0.55);
+  backdrop-filter: blur(8px);
+}
+
+.pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* Decorative planets */
+.landing-preview {
+  position: fixed; right: -60px; top: 50%;
+  transform: translateY(-50%);
+  width: 320px; height: 320px;
+  pointer-events: none; z-index: 5; opacity: 0.45;
+}
+
+.preview-orb { position: absolute; border-radius: 50%; }
+
+.orb-1 {
+  width: 68px; height: 68px;
+  background: radial-gradient(circle at 32% 32%, #5af0ff, #006bb5);
+  top: 28%; left: 18%;
+  box-shadow: 0 0 30px rgba(0,212,255,0.45);
+  animation: float 6s ease-in-out infinite;
+}
+.orb-2 {
+  width: 44px; height: 44px;
+  background: radial-gradient(circle at 32% 32%, #42f5b3, #0d7a55);
+  top: 56%; left: 52%;
+  box-shadow: 0 0 20px rgba(0,255,180,0.4);
+  animation: float 8s ease-in-out infinite -2s;
+}
+.orb-3 {
+  width: 30px; height: 30px;
+  background: radial-gradient(circle at 32% 32%, #f5a842, #a04b0a);
+  top: 18%; left: 58%;
+  box-shadow: 0 0 14px rgba(245,168,66,0.45);
+  animation: float 7s ease-in-out infinite -4s;
+}
+
+.preview-ring {
+  position: absolute; border-radius: 50%; border: 1px solid;
+}
+.ring-1 { width: 126px; height: 38px; top: calc(28% + 15px); left: calc(18% - 29px); transform: rotate(-14deg); border-color: rgba(0,212,255,0.22); }
+.ring-2 { width: 86px; height: 26px; top: calc(56% + 9px); left: calc(52% - 21px); transform: rotate(-10deg); border-color: rgba(0,255,180,0.2); }
+
+.preview-label {
+  position: absolute; font-family: var(--font-mono);
+  font-size: 9px; color: rgba(0,180,255,0.4); white-space: nowrap;
+}
+.label-1 { top: calc(28% + 52px); left: 2%; }
+.label-2 { top: calc(56% + 38px); left: 40%; }
+.label-3 { top: calc(18% + 23px); left: 46%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.landing-footer {
+  position: relative; z-index: 10;
+  text-align: center; padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(0,180,255,0.2);
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,141 @@
+/* Mobile responsive overrides for GitHub Galaxy */
+/* Import this in global.css or individual page components */
+
+@media (max-width: 900px) {
+  /* Hide left sidebar on smaller screens */
+  .galaxy-stats {
+    display: none;
+  }
+
+  .galaxy-main {
+    left: 0 !important;
+  }
+
+  /* Planet panel takes full width on mobile */
+  .planet-panel {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    height: 60vh;
+    border-left: none;
+    border-top: 1px solid rgba(79, 195, 247, 0.15);
+    border-radius: 16px 16px 0 0;
+    animation: panel-slide-up 0.22s ease;
+  }
+
+  @keyframes panel-slide-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+
+  .galaxy-main.panel-open {
+    right: 0;
+    bottom: 60vh;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Navbar on mobile */
+  .navbar {
+    padding: 0 14px;
+    height: 56px;
+  }
+
+  .nav-galaxy-name-btn {
+    font-size: 13px;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-last-sync {
+    display: none;
+  }
+
+  .sync-btn span:first-child {
+    display: none;
+  }
+
+  .sync-btn {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  /* Landing page */
+  .landing-preview {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Galaxy page */
+  .galaxy-main {
+    top: 56px;
+  }
+
+  /* Planet panel full screen on very small */
+  .planet-panel {
+    height: 70vh;
+    padding: 20px 16px;
+  }
+
+  .panel-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Sync overlay */
+  .sync-overlay-content {
+    padding: 24px 16px;
+  }
+
+  .sync-galaxy-anim {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Explore page */
+  .explore-nav {
+    padding: 14px 16px;
+  }
+
+  .explore-logo {
+    font-size: 14px;
+  }
+
+  .gc-stats {
+    padding: 8px 0;
+  }
+
+  .gc-stat-val {
+    font-size: 14px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) {
+  /* Always show edit icon on touch */
+  .nav-edit-icon {
+    opacity: 0.5 !important;
+  }
+
+  /* Planet labels always visible on touch */
+  .galaxy-card {
+    transform: none !important;
+  }
+
+  .gc-explore-link {
+    opacity: 1 !important;
+  }
+}

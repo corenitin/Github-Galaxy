@@ -1,0 +1,73 @@
+.mobile-stats-toggle {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 900px) {
+  .mobile-stats-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    z-index: 150;
+    background: rgba(13, 21, 48, 0.95);
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: 100px;
+    padding: 10px 16px;
+    color: var(--accent-cyan);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s;
+  }
+
+  .mobile-stats-toggle:hover {
+    background: rgba(79, 195, 247, 0.12);
+    box-shadow: 0 0 16px rgba(79, 195, 247, 0.2);
+  }
+
+  .mst-icon {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .mst-label {
+    letter-spacing: 0.05em;
+  }
+
+  .mobile-stats-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 155;
+    background: rgba(3, 5, 15, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .mobile-stats-drawer {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 260px;
+    height: calc(100vh - 56px);
+    z-index: 160;
+    animation: drawer-in 0.2s ease;
+  }
+
+  @keyframes drawer-in {
+    from { transform: translateX(-100%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  /* Override galaxy-stats position inside drawer */
+  .mobile-stats-drawer .galaxy-stats {
+    display: flex !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

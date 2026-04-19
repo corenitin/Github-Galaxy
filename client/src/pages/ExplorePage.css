@@ -1,0 +1,316 @@
+.explore-page {
+  min-height: 100vh;
+  background: var(--space-black);
+  color: var(--star-white);
+}
+
+.explore-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(3,5,15,0.92);
+  border-bottom: 1px solid rgba(106,126,168,0.1);
+  backdrop-filter: blur(12px);
+}
+
+.explore-back {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--star-dim);
+  cursor: pointer;
+  padding: 6px 0;
+  transition: color 0.15s;
+}
+.explore-back:hover { color: var(--accent-cyan); }
+
+.explore-logo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.05em;
+}
+
+.explore-body {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Sidebar leaderboard */
+.explore-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  margin-right: 32px;
+}
+
+.sidebar-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--star-dim);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.lb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+  margin-bottom: 2px;
+}
+.lb-item:hover { background: rgba(79,195,247,0.06); }
+
+.lb-rank {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(106,126,168,0.5);
+  min-width: 20px;
+}
+
+.lb-avatar {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(106,126,168,0.2);
+}
+
+.lb-info { flex: 1; min-width: 0; }
+
+.lb-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--star-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-commits {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--star-dim);
+}
+
+/* Main grid */
+.explore-main { flex: 1; min-width: 0; }
+
+.explore-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.explore-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--star-white);
+}
+
+.explore-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--star-dim);
+}
+
+.galaxy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Galaxy card */
+.galaxy-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(7,12,30,0.7);
+  border: 1px solid rgba(106,126,168,0.12);
+  border-radius: 12px;
+  padding: 18px;
+  transition: all 0.2s;
+}
+.galaxy-card:hover {
+  border-color: rgba(79,195,247,0.25);
+  background: rgba(13,21,48,0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.gc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.gc-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(79,195,247,0.2);
+}
+
+.gc-identity { flex: 1; min-width: 0; }
+
+.gc-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--star-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gc-uname {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--star-dim);
+}
+
+/* Mini planet row */
+.gc-planets-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  min-height: 36px;
+}
+
+.gc-mini-planet-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.gc-mini-planet {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.gc-planet-name {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--star-dim);
+  max-width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.gc-more-planets {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(106,126,168,0.4);
+  margin-left: auto;
+}
+
+.gc-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(106,126,168,0.1);
+  border-bottom: 1px solid rgba(106,126,168,0.1);
+  padding: 10px 0;
+  margin-bottom: 12px;
+}
+
+.gc-stat {
+  flex: 1;
+  text-align: center;
+}
+.gc-stat + .gc-stat {
+  border-left: 1px solid rgba(106,126,168,0.1);
+}
+
+.gc-stat-val {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--star-white);
+}
+
+.gc-stat-lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--star-dim);
+  letter-spacing: 0.08em;
+}
+
+.gc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gc-synced {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(106,126,168,0.4);
+}
+
+.gc-explore-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-cyan);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.galaxy-card:hover .gc-explore-link { opacity: 1; }
+
+/* States */
+.explore-loading {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.explore-empty {
+  text-align: center;
+  padding: 80px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--star-dim);
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.explore-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.explore-page-info {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--star-dim);
+}
+
+@media (max-width: 768px) {
+  .explore-sidebar { display: none; }
+  .explore-body { padding: 20px 16px; }
+  .galaxy-grid { grid-template-columns: 1fr; }
+}

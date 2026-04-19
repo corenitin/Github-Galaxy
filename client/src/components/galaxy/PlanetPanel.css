@@ -1,0 +1,247 @@
+.planet-panel {
+  position: fixed;
+  top: var(--navbar-h, 60px);
+  right: 0;
+  width: 300px;
+  height: calc(100vh - var(--navbar-h, 60px));
+  background: linear-gradient(180deg, rgba(2,13,36,0.97) 0%, rgba(1,8,24,0.97) 100%);
+  border-left: 1px solid rgba(0,180,255,0.12);
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+  animation: slide-in 0.2s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,180,255,0.2) transparent;
+}
+.planet-panel::-webkit-scrollbar { width: 2px; }
+.planet-panel::-webkit-scrollbar-thumb { background: rgba(0,180,255,0.25); }
+
+@keyframes slide-in {
+  from { transform: translateX(20px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.panel-close {
+  position: sticky;
+  top: 0; right: 0;
+  float: right;
+  margin: 12px 12px 0 0;
+  background: rgba(0,180,255,0.06);
+  border: 1px solid rgba(0,180,255,0.15);
+  color: rgba(0,180,255,0.5);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 9px;
+  border-radius: 5px;
+  transition: all 0.15s;
+  z-index: 10;
+}
+.panel-close:hover { color: var(--glow-primary); border-color: var(--glow-primary); }
+
+.panel-inner { padding: 16px 18px 28px; clear: both; }
+
+/* Planet hero */
+.panel-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 18px;
+  position: relative;
+}
+
+.panel-planet-display {
+  position: relative;
+  width: 80px; height: 80px;
+  margin-bottom: 14px;
+}
+
+.panel-planet-orb {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-planet-shine {
+  position: absolute;
+  top: 10%; left: 12%;
+  width: 40%; height: 35%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.panel-planet-shadow {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 55%; height: 55%;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.panel-type-badge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.panel-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.panel-desc {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(140,180,220,0.5);
+  text-align: center;
+  line-height: 1.7;
+  max-width: 220px;
+}
+
+/* Stats row */
+.panel-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.stat-card {
+  background: rgba(0,180,255,0.04);
+  border: 1px solid rgba(0,180,255,0.1);
+  border-radius: 7px;
+  padding: 8px 4px;
+  text-align: center;
+  transition: border-color 0.15s;
+}
+.stat-card:hover { border-color: rgba(0,180,255,0.25); }
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  color: #fff; line-height: 1.1;
+}
+
+.stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(100,140,180,0.5);
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* Sections */
+.panel-section { margin-bottom: 18px; }
+
+.panel-section-title {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(0,180,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0,180,255,0.07);
+}
+
+/* Language bar */
+.lang-bar {
+  display: flex; height: 5px;
+  border-radius: 3px; overflow: hidden;
+  gap: 1px; margin-bottom: 9px;
+}
+.lang-bar-segment { border-radius: 1px; }
+
+.lang-legend { display: flex; flex-direction: column; gap: 5px; }
+.lang-legend-item { display: flex; align-items: center; gap: 7px; }
+.lang-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.lang-name { font-family: var(--font-mono); font-size: 10px; color: rgba(180,210,240,0.8); flex: 1; }
+.lang-pct { font-family: var(--font-mono); font-size: 10px; color: rgba(100,140,180,0.5); }
+
+/* Topics */
+.panel-topics { display: flex; flex-wrap: wrap; gap: 5px; }
+.topic-tag {
+  font-family: var(--font-mono);
+  font-size: 9px; padding: 3px 9px;
+  background: rgba(0,180,255,0.06);
+  border: 1px solid rgba(0,180,255,0.15);
+  border-radius: 100px;
+  color: rgba(0,212,255,0.7);
+  letter-spacing: 0.03em;
+}
+
+/* Commits */
+.commit-list { display: flex; flex-direction: column; gap: 5px; }
+
+.commit-item {
+  padding: 8px 10px;
+  background: rgba(0,180,255,0.03);
+  border: 1px solid rgba(0,180,255,0.07);
+  border-radius: 6px;
+  transition: border-color 0.15s;
+}
+.commit-item:hover { border-color: rgba(0,180,255,0.18); }
+
+.commit-top { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+.commit-sha {
+  font-family: var(--font-mono);
+  font-size: 9px; color: var(--glow-primary);
+  opacity: 0.6; flex-shrink: 0;
+}
+.commit-date {
+  font-family: var(--font-mono);
+  font-size: 9px; color: rgba(100,140,180,0.4);
+  margin-left: auto; white-space: nowrap;
+}
+.commit-msg {
+  font-family: var(--font-mono);
+  font-size: 10px; color: rgba(180,210,240,0.8);
+  line-height: 1.5;
+}
+
+/* Links */
+.panel-links { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+
+.panel-link {
+  display: block; text-align: center;
+  padding: 9px;
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 7px; text-decoration: none;
+  transition: all 0.2s;
+}
+
+.panel-link-blue {
+  color: var(--glow-primary);
+  border: 1px solid rgba(0,212,255,0.2);
+  background: rgba(0,212,255,0.04);
+}
+.panel-link-blue:hover { background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.4); }
+
+.panel-link-green {
+  color: var(--glow-hot);
+  border: 1px solid rgba(0,255,204,0.2);
+  background: rgba(0,255,204,0.04);
+}
+.panel-link-green:hover { background: rgba(0,255,204,0.1); border-color: rgba(0,255,204,0.4); }

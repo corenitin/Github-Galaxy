@@ -1,0 +1,92 @@
+.planet-tooltip {
+  position: fixed;
+  z-index: 100;
+  width: 210px;
+  background: rgba(2,13,36,0.96);
+  border: 1px solid rgba(0,180,255,0.2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  pointer-events: none;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7), 0 0 30px rgba(0,100,200,0.1);
+  animation: tt-in 0.1s ease;
+}
+
+@keyframes tt-in {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tt-header {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  margin-bottom: 7px;
+}
+
+.tt-name {
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 700;
+  color: #fff;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.tt-badge {
+  font-family: var(--font-mono);
+  font-size: 8px; padding: 2px 7px;
+  border: 1px solid; border-radius: 100px;
+  white-space: nowrap; flex-shrink: 0;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+.tt-desc {
+  font-family: var(--font-mono);
+  font-size: 10px; color: rgba(140,180,220,0.5);
+  line-height: 1.6; margin-bottom: 9px;
+}
+
+.tt-meta {
+  display: flex; align-items: center;
+  gap: 10px; margin-bottom: 9px; flex-wrap: wrap;
+}
+
+.tt-lang {
+  display: flex; align-items: center;
+  gap: 5px; font-family: var(--font-mono);
+  font-size: 10px; color: rgba(140,180,220,0.6);
+}
+
+.tt-lang-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%; flex-shrink: 0;
+}
+
+.tt-stat {
+  font-family: var(--font-mono);
+  font-size: 10px; color: rgba(120,160,200,0.5);
+}
+
+.tt-commits-row {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 5px;
+}
+
+.tt-commits-label {
+  font-family: var(--font-mono);
+  font-size: 9px; color: rgba(0,180,255,0.5);
+}
+
+.tt-commit-dots {
+  display: flex; gap: 2px; flex-wrap: wrap; margin-bottom: 8px;
+}
+
+.tt-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+}
+
+.tt-footer {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(0,180,255,0.25);
+  letter-spacing: 0.1em; text-align: right;
+  text-transform: uppercase;
+}
