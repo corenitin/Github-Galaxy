@@ -2,54 +2,58 @@
 @import './responsive.css';
 
 :root {
-  /* Core blues */
-  --blue-950: #010818;
-  --blue-900: #020d24;
-  --blue-800: #041633;
-  --blue-700: #072044;
-  --blue-600: #0a2d5e;
-  --blue-500: #0e3d80;
-  --blue-400: #1a5fba;
-  --blue-300: #2d7dea;
-  --blue-200: #5aa3f5;
-  --blue-100: #93c5fd;
-  --blue-50:  #dbeafe;
+  /* GitHub dark green + black core */
+  --bg-black:    #0d1117;
+  --bg-deep:     #010409;
+  --bg-surface:  #161b22;
+  --bg-overlay:  #1c2128;
+  --bg-muted:    #21262d;
 
-  /* Accent glows */
-  --glow-primary:   #00d4ff;
-  --glow-secondary: #0066ff;
-  --glow-hot:       #00ffcc;
+  /* GitHub green accent */
+  --green-900:   #033a16;
+  --green-700:   #055d20;
+  --green-500:   #238636;
+  --green-400:   #2ea043;
+  --green-300:   #3fb950;
+  --green-200:   #56d364;
+  --green-100:   #7ee787;
+  --green-glow:  #39d353;
 
-  /* Planet palette — rich, distinct, realistic */
-  --planet-js:      #f5c842;
-  --planet-ts:      #4287f5;
-  --planet-python:  #3bb8a8;
-  --planet-go:      #00c4e0;
-  --planet-rust:    #e8763a;
-  --planet-java:    #e84c3d;
-  --planet-ruby:    #cc3366;
-  --planet-cpp:     #a855f7;
-  --planet-swift:   #f97316;
-  --planet-kotlin:  #8b5cf6;
-  --planet-html:    #ef4444;
-  --planet-css:     #3b82f6;
-  --planet-vue:     #22c55e;
-  --planet-default: #64748b;
+  /* Border / text */
+  --border:      rgba(48,54,61,0.8);
+  --border-green: rgba(63,185,80,0.25);
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #484f58;
 
-  /* Typography */
+  /* Planet colors — vivid, distinct */
+  --p-js:      #f0db4f;
+  --p-ts:      #3b82f6;
+  --p-python:  #4ec9b0;
+  --p-go:      #00acd7;
+  --p-rust:    #f74c00;
+  --p-java:    #ed8b00;
+  --p-ruby:    #cc342d;
+  --p-cpp:     #9b59b6;
+  --p-swift:   #ff6b35;
+  --p-kotlin:  #7f52ff;
+  --p-html:    #e34c26;
+  --p-css:     #264de4;
+  --p-vue:     #42b883;
+  --p-shell:   #4eaa25;
+  --p-default: #39d353;
+
   --font-display: 'Rajdhani', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
-
-  /* Spacing */
-  --sidebar-w: 240px;
-  --navbar-h:  60px;
+  --sidebar-w:    240px;
+  --navbar-h:     60px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
-  background: var(--blue-950);
-  color: var(--blue-50);
+  background: var(--bg-black);
+  color: var(--text-primary);
   font-family: var(--font-mono);
   overflow-x: hidden;
   height: 100%;
@@ -58,60 +62,57 @@ html, body {
 
 #root { height: 100%; }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--blue-900); }
-::-webkit-scrollbar-thumb { background: var(--blue-500); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--blue-300); }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--green-500); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green-300); }
 
-/* Loading */
 .loading-cosmos {
   position: fixed; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: var(--blue-950);
+  background: var(--bg-black);
   flex-direction: column; gap: 16px;
 }
 
 .cosmos-spinner {
   width: 36px; height: 36px;
-  border: 2px solid rgba(0, 212, 255, 0.1);
-  border-top-color: var(--glow-primary);
+  border: 2px solid rgba(63,185,80,0.1);
+  border-top-color: var(--green-300);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Buttons */
 .btn {
   font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em;
   padding: 9px 20px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  background: transparent;
-  color: var(--blue-100);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
   cursor: pointer;
   transition: all 0.2s;
   text-transform: uppercase;
 }
 .btn:hover {
-  border-color: var(--glow-primary);
-  color: var(--glow-primary);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.15);
+  border-color: var(--green-400);
+  color: var(--green-200);
+  background: rgba(63,185,80,0.06);
 }
 .btn-primary {
-  background: rgba(0, 212, 255, 0.08);
-  border-color: rgba(0, 212, 255, 0.4);
-  color: var(--glow-primary);
+  background: rgba(35,134,54,0.15);
+  border-color: var(--green-500);
+  color: var(--green-200);
 }
 .btn-primary:hover {
-  background: rgba(0, 212, 255, 0.16);
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.25);
+  background: rgba(35,134,54,0.28);
+  border-color: var(--green-300);
+  box-shadow: 0 0 20px rgba(63,185,80,0.2);
 }
-.btn-ghost { border-color: transparent; color: var(--blue-200); }
-.btn-ghost:hover { border-color: rgba(0,212,255,0.2); color: var(--blue-50); box-shadow: none; }
+.btn-ghost { border-color: transparent; background: transparent; color: var(--text-secondary); }
+.btn-ghost:hover { border-color: var(--border); color: var(--text-primary); background: var(--bg-muted); box-shadow: none; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }

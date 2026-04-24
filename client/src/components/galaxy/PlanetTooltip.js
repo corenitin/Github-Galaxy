@@ -16,10 +16,10 @@ function getPlanetType(p) {
 }
 
 const TYPE_META = {
-  active:   { label: 'Active', color: '#4fc3f7' },
-  deployed: { label: 'Deployed', color: '#69f0ae' },
-  archived: { label: 'Archived', color: '#ff8a65' },
-  forked:   { label: 'Forked', color: '#ce93d8' },
+  active:   { label: 'Active', color: '#3fb950' },
+  deployed: { label: 'Deployed', color: '#56d364' },
+  archived: { label: 'Archived', color: '#e3b341' },
+  forked:   { label: 'Forked', color: '#a78bfa' },
 };
 
 const PlanetTooltip = ({ planet, x, y, containerRect }) => {

@@ -31,8 +31,8 @@ export const AuthProvider = ({ children }) => {
   }, [token, fetchUser]);
 
   const login = () => {
-  window.location.href = `${process.env.REACT_APP_API_URL || ''}/auth/github`;
-};
+    window.location.href = `${process.env.REACT_APP_API_URL || ''}/auth/github`;
+  };
 
   const handleCallback = (newToken) => {
     localStorage.setItem('galaxy_token', newToken);

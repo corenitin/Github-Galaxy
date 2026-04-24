@@ -23,13 +23,13 @@
   position: absolute; top:50%; left:50%;
   width: 18px; height: 18px; margin: -9px 0 0 -9px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #80f0ff, #00d4ff);
-  box-shadow: 0 0 24px rgba(0,212,255,0.8), 0 0 50px rgba(0,100,255,0.4);
+  background: radial-gradient(circle at 35% 35%, #80f0ff, #3fb950);
+  box-shadow: 0 0 24px rgba(63,185,80,0.8), 0 0 50px rgba(35,134,54,0.4);
   animation: core-pulse 2s ease-in-out infinite;
 }
 @keyframes core-pulse {
-  0%,100% { box-shadow: 0 0 16px rgba(0,212,255,0.5); }
-  50% { box-shadow: 0 0 36px rgba(0,212,255,0.9), 0 0 60px rgba(0,100,255,0.4); }
+  0%,100% { box-shadow: 0 0 16px rgba(63,185,80,0.5); }
+  50% { box-shadow: 0 0 36px rgba(63,185,80,0.9), 0 0 60px rgba(35,134,54,0.4); }
 }
 
 .sync-ring {
@@ -37,7 +37,7 @@
   border-radius: 50%; border: 0.5px solid;
   transform: translate(-50%,-50%) rotateX(72deg);
 }
-.sync-ring-1 { width:62px; height:62px; border-color:rgba(0,212,255,0.3); animation: ring-spin 4s linear infinite; }
+.sync-ring-1 { width:62px; height:62px; border-color:rgba(63,185,80,0.3); animation: ring-spin 4s linear infinite; }
 .sync-ring-2 { width:104px; height:104px; border-color:rgba(0,150,255,0.18); animation: ring-spin 7s linear infinite reverse; }
 .sync-ring-3 { width:152px; height:152px; border-color:rgba(0,100,200,0.1); animation: ring-spin 12s linear infinite; }
 
@@ -50,7 +50,7 @@
 .sync-planet-1 {
   width:10px; height:10px; margin:-5px 0 0 -5px;
   background: radial-gradient(circle at 35% 35%,#80f0ff,#0066cc);
-  box-shadow: 0 0 10px rgba(0,212,255,0.6);
+  box-shadow: 0 0 10px rgba(63,185,80,0.6);
   animation: orbit1 4s linear infinite;
 }
 .sync-planet-2 {
@@ -91,15 +91,15 @@
 
 .sync-bar-fill {
   height:100%;
-  background: linear-gradient(90deg, var(--glow-primary), var(--glow-hot));
+  background: linear-gradient(90deg, var(--green-300), var(--green-200));
   border-radius: 1px;
   transition: width 0.4s ease;
-  box-shadow: 0 0 8px rgba(0,212,255,0.5);
+  box-shadow: 0 0 8px rgba(63,185,80,0.5);
 }
 
 .sync-pct {
   font-family: var(--font-mono); font-size: 11px;
-  color: var(--glow-primary); min-width: 32px; text-align: right;
+  color: var(--green-300); min-width: 32px; text-align: right;
 }
 
 .sync-count-text {

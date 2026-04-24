@@ -16,9 +16,9 @@ function getPlanetType(p) {
 }
 
 const TYPE_META = {
-  active:   { label: 'Active World',    color: '#00d4ff' },
-  deployed: { label: 'Deployed World',  color: '#00ffcc' },
-  archived: { label: 'Ancient World',   color: '#f59e0b' },
+  active:   { label: 'Active World',    color: '#3fb950' },
+  deployed: { label: 'Deployed World',  color: '#56d364' },
+  archived: { label: 'Ancient World',   color: '#e3b341' },
   forked:   { label: 'Borrowed World',  color: '#a78bfa' },
 };
 
@@ -140,7 +140,7 @@ const PlanetPanel = ({ planet, onClose }) => {
 
         {/* Links */}
         <div className="panel-links">
-          <a href={`https://github.com/${planet.fullName}`} target="_blank" rel="noopener noreferrer" className="panel-link panel-link-blue">
+          <a href={`https://github.com/${planet.fullName}`} target="_blank" rel="noopener noreferrer" className="panel-link panel-link-muted">
             View on GitHub ↗
           </a>
           {planet.homepage && (

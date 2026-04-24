@@ -42,8 +42,8 @@ const LandingPage = () => {
       // Nebula glow
       const cx = canvas.width * 0.5, cy = canvas.height * 0.42;
       const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 340);
-      grad.addColorStop(0, 'rgba(79,195,247,0.04)');
-      grad.addColorStop(0.5, 'rgba(106,63,210,0.03)');
+      grad.addColorStop(0, 'rgba(57,211,83,0.04)');
+      grad.addColorStop(0.5, 'rgba(35,134,54,0.025)');
       grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -52,7 +52,7 @@ const LandingPage = () => {
         const a = s.alpha * (0.5 + 0.5 * Math.sin(t * s.speed + s.offset));
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(210,225,255,${a})`;
+        ctx.fillStyle = `rgba(180,220,185,${a})`;
         ctx.fill();
       });
       t++;
